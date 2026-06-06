@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026 조선대 진로취업박람회 공식 홈페이지 시안. 행사일시 2026년 10월 28일 수요일 10:00~17:00, 조선대학교 체육대학 1층 체육관." />
+  <title>2026 조선대 진로취업박람회</title>
+  <style>
+    :root {
+      --blue: #0033a0;
+      --blue-2: #0b58d0;
+      --teal: #00a3ad;
+      --gold: #cc8a00;
+      --orange: #ff6a13;
+      --gray: #a2aaad;
+      --ink: #111827;
+      --muted: #5b6472;
+      --line: rgba(17, 24, 39, .12);
+      --bg: #f6f8fc;
+      --card: rgba(255,255,255,.86);
+      --white: #fff;
+      --shadow: 0 24px 80px rgba(0, 32, 91, .16);
+      --shadow-soft: 0 16px 45px rgba(0, 31, 91, .10);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(0, 163, 173, .16), transparent 28%),
+        radial-gradient(circle at 86% 0%, rgba(255, 106, 19, .13), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #ffffff 100%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      letter-spacing: -.03em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font-family: inherit; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--blue), var(--teal));
+      color: white;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .topbar .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+    }
+    .topbar b { font-weight: 800; }
+    .pill-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.22);
+      white-space: nowrap;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(1.6) blur(18px);
+      background: rgba(255,255,255,.82);
+      border-bottom: 1px solid rgba(17,24,39,.08);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background:
+        linear-gradient(135deg, var(--blue) 0%, var(--blue-2) 52%, var(--teal) 100%);
+      box-shadow: 0 14px 32px rgba(0, 51, 160, .22);
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+    .brand-title { display: grid; line-height: 1.08; }
+    .brand-title strong { font-size: 17px; letter-spacing: -.04em; }
+    .brand-title span { font-size: 12px; color: var(--muted); letter-spacing: .03em; font-weight: 700; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-links a {
+      padding: 10px 12px;
+      color: #334155;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: .18s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible {
+      color: var(--blue);
+      background: rgba(0,51,160,.08);
+      outline: none;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--ink);
+      color: white !important;
+      padding: 11px 16px !important;
+      box-shadow: 0 12px 28px rgba(17,24,39,.18);
+    }
+    .nav-cta:hover { background: var(--blue) !important; }
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: #eef3ff;
+      color: var(--blue);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0 50px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, .82fr);
+      gap: 28px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: rgba(0,51,160,.08);
+      border: 1px solid rgba(0,51,160,.12);
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: -.01em;
+    }
+    .eyebrow .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 6px rgba(255,106,19,.14);
+    }
+    h1 {
+      margin: 24px 0 16px;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -.08em;
+    }
+    .gradient-text {
+      display: inline-block;
+      background: linear-gradient(120deg, var(--blue) 0%, var(--blue-2) 50%, var(--teal) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-subtitle {
+      margin: 0 0 22px;
+      font-size: clamp(20px, 2.8vw, 30px);
+      line-height: 1.3;
+      color: #253044;
+      font-weight: 800;
+    }
+    .hero-copy {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.76;
+      font-size: 17px;
+    }
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: white;
+      box-shadow: 0 18px 38px rgba(0,51,160,.24);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: 0 14px 30px rgba(17,24,39,.08);
+    }
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 26px;
+      max-width: 780px;
+    }
+    .meta-card {
+      min-height: 102px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: 0 14px 42px rgba(31,41,55,.08);
+    }
+    .meta-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .meta-card strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: -.05em;
+    }
+
+    .hero-panel {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -90px;
+      top: -90px;
+      background: radial-gradient(circle, rgba(0,163,173,.24), transparent 70%);
+      pointer-events: none;
+    }
+    .panel-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .panel-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #0f766e;
+      background: rgba(0,163,173,.10);
+      border: 1px solid rgba(0,163,173,.16);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .panel-date {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .countdown {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+    .count-box {
+      border-radius: 18px;
+      padding: 16px 8px;
+      background: linear-gradient(180deg, #f9fbff, #eef5ff);
+      border: 1px solid rgba(0,51,160,.10);
+      text-align: center;
+    }
+    .count-box strong {
+      display: block;
+      color: var(--blue);
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+    .count-box span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .journey-card {
+      position: relative;
+      margin-top: 16px;
+      padding: 20px;
+      border-radius: 24px;
+      background: var(--ink);
+      color: white;
+      overflow: hidden;
+    }
+    .journey-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -45px -65px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,106,19,.45);
+      filter: blur(8px);
+    }
+    .journey-card h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -.05em;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-steps {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 8px;
+    }
+    .journey-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      font-weight: 800;
+    }
+    .journey-step span {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: white;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 950;
+    }
+    .mini-notice {
+      position: relative;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px;
+      margin-top: 14px;
+      border-radius: 20px;
+      background: #fff7ed;
+      border: 1px solid rgba(255,106,19,.18);
+      color: #8a3a07;
+      line-height: 1.55;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    section { padding: 66px 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      background: rgba(0,51,160,.07);
+      border: 1px solid rgba(0,51,160,.10);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 950;
+    }
+    .section-title {
+      margin: 12px 0 0;
+      font-size: clamp(30px, 4.2vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -.07em;
+    }
+    .section-desc {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+      max-width: 720px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: white;
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      min-height: 170px;
+    }
+    .stat-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -45px -55px auto;
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      background: rgba(0,51,160,.07);
+    }
+    .stat-card .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #eef5ff;
+      color: var(--blue);
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 35px;
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+    .stat-card span {
+      display: block;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .program-card {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: 0 14px 38px rgba(31,41,55,.08);
+      overflow: hidden;
+      min-height: 255px;
+    }
+    .program-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--blue), var(--teal), var(--orange));
+    }
+    .program-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(0,51,160,.10), rgba(0,163,173,.12));
+      font-size: 26px;
+    }
+    .program-card h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -.06em;
+    }
+    .program-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .flow {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--blue), #082563 58%, #121826);
+      color: white;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .flow::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -120px;
+      top: -140px;
+      border-radius: 50%;
+      background: rgba(0,163,173,.34);
+      filter: blur(1px);
+    }
+    .flow-title {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 20px;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -.07em;
+    }
+    .flow-line {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .flow-item {
+      min-height: 145px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .flow-item .num {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.94);
+      color: var(--blue);
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+    .flow-item strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.05em;
+    }
+    .flow-item span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.74);
+      line-height: 1.55;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .booth-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-btn {
+      border: 1px solid rgba(17,24,39,.10);
+      background: white;
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: #475569;
+      cursor: pointer;
+      font-weight: 900;
+      transition: .18s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      color: white;
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+    .booth-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .booth-card {
+      min-height: 156px;
+      padding: 18px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: 0 12px 30px rgba(31,41,55,.07);
+      display: grid;
+      gap: 10px;
+      transition: .18s ease;
+    }
+    .booth-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(31,41,55,.10); }
+    .booth-chip {
+      justify-self: start;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(0,51,160,.08);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 950;
+    }
+    .booth-card h3 {
+      margin: 0;
+      font-size: 19px;
+      letter-spacing: -.05em;
+      line-height: 1.26;
+    }
+    .booth-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .timeline-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .time-card, .guide-card, .faq-card {
+      border-radius: var(--radius-lg);
+      background: white;
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: var(--shadow-soft);
+      padding: 26px;
+    }
+    .time-list { display: grid; gap: 12px; margin-top: 18px; }
+    .time-item {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid rgba(17,24,39,.06);
+    }
+    .time-item time {
+      color: var(--blue);
+      font-weight: 950;
+      font-size: 16px;
+    }
+    .time-item strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.05em;
+    }
+    .time-item span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    .stamp-card {
+      min-height: 100%;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.80)),
+        radial-gradient(circle at 80% 10%, rgba(255,106,19,.25), transparent 35%),
+        radial-gradient(circle at 12% 100%, rgba(0,163,173,.20), transparent 35%);
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: var(--shadow-soft);
+      padding: 28px;
+    }
+    .stamp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .stamp {
+      min-height: 112px;
+      border: 2px dashed rgba(0,51,160,.24);
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 12px;
+      background: rgba(255,255,255,.70);
+    }
+    .stamp b { display: block; color: var(--blue); font-size: 15px; }
+    .stamp span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; font-weight: 800; }
+
+    .apply-panel {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+      border-radius: var(--radius-xl);
+      background: white;
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      overflow: hidden;
+    }
+    .apply-visual {
+      border-radius: 26px;
+      padding: 28px;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(0,51,160,.98), rgba(0,163,173,.86)),
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.16), transparent 24%);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .apply-visual::after {
+      content: "CSU";
+      position: absolute;
+      right: -15px;
+      bottom: -28px;
+      font-size: 124px;
+      font-weight: 950;
+      letter-spacing: -.12em;
+      color: rgba(255,255,255,.08);
+    }
+    .qr-mock {
+      width: 152px;
+      height: 152px;
+      border-radius: 22px;
+      background: white;
+      padding: 14px;
+      box-shadow: 0 18px 38px rgba(0,0,0,.16);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 5px;
+      position: relative;
+      z-index: 1;
+    }
+    .qr-mock i {
+      display: block;
+      border-radius: 4px;
+      background: #111827;
+      opacity: .9;
+    }
+    .qr-mock i:nth-child(2n) { opacity: .18; }
+    .qr-mock i:nth-child(5n) { background: var(--teal); opacity: .85; }
+    .apply-visual h3 {
+      position: relative;
+      z-index: 1;
+      margin: 26px 0 8px;
+      font-size: 28px;
+      letter-spacing: -.07em;
+    }
+    .apply-visual p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: rgba(255,255,255,.78);
+      line-height: 1.7;
+    }
+    .apply-form {
+      padding: 8px 6px 8px 0;
+    }
+    .step-list { display: grid; gap: 12px; margin-top: 20px; }
+    .apply-step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid rgba(17,24,39,.06);
+    }
+    .apply-step .step-no {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(0,51,160,.10);
+      color: var(--blue);
+      font-weight: 950;
+    }
+    .apply-step strong { display: block; font-size: 17px; letter-spacing: -.05em; }
+    .apply-step span { display: block; margin-top: 4px; color: var(--muted); line-height: 1.55; font-size: 14px; }
+    .link-placeholder {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(0,51,160,.12);
+      background: rgba(0,51,160,.05);
+      color: #1e3a8a;
+      line-height: 1.6;
+      font-weight: 800;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .guide-card h3, .time-card h3, .faq-card h3, .stamp-card h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -.06em;
+    }
+    .guide-card p, .faq-card p, .stamp-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 12px 0 0;
+    }
+    .guide-card ul {
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+    .guide-card li {
+      display: flex;
+      gap: 9px;
+      color: #334155;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+    .guide-card li::before {
+      content: "✓";
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(0,163,173,.12);
+      color: #0f766e;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .venue {
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.78)),
+        radial-gradient(circle at 0% 100%, rgba(0,51,160,.16), transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(255,106,19,.15), transparent 34%);
+      border: 1px solid rgba(17,24,39,.08);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      min-height: 430px;
+    }
+    .map-mock {
+      position: relative;
+      min-height: 430px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.76) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.76) 1px, transparent 1px),
+        linear-gradient(135deg, #dceafe, #c9f1f3);
+      background-size: 42px 42px, 42px 42px, auto;
+      overflow: hidden;
+    }
+    .map-road {
+      position: absolute;
+      background: rgba(255,255,255,.88);
+      box-shadow: inset 0 0 0 1px rgba(17,24,39,.04);
+      border-radius: 999px;
+    }
+    .map-road.r1 { width: 120%; height: 26px; left: -12%; top: 44%; transform: rotate(-18deg); }
+    .map-road.r2 { width: 92%; height: 22px; right: -16%; top: 62%; transform: rotate(14deg); }
+    .map-road.r3 { width: 18px; height: 100%; left: 46%; top: 0; transform: rotate(10deg); }
+    .pin {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -100%);
+      width: 70px;
+      height: 70px;
+      border-radius: 50% 50% 50% 6px;
+      background: var(--orange);
+      transform-origin: center;
+      rotate: -45deg;
+      box-shadow: 0 16px 36px rgba(255,106,19,.28);
+    }
+    .pin::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: white;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .map-label {
+      position: absolute;
+      left: 50%;
+      top: 53%;
+      transform: translateX(-50%);
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: white;
+      color: var(--blue);
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(31,41,55,.12);
+      white-space: nowrap;
+    }
+    .venue-info { padding: 34px; display: flex; flex-direction: column; justify-content: center; }
+    .venue-list { display: grid; gap: 12px; margin-top: 20px; }
+    .venue-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(17,24,39,.06);
+    }
+    .venue-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(0,51,160,.09);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+    .venue-item strong { display: block; font-size: 16px; letter-spacing: -.04em; }
+    .venue-item span { display: block; margin-top: 3px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    details.faq-card {
+      padding: 0;
+      overflow: hidden;
+    }
+    details summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      font-size: 18px;
+      font-weight: 950;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--blue);
+      font-size: 20px;
+      line-height: 1;
+    }
+    details[open] summary::after { content: "−"; }
+    details p {
+      margin: 0;
+      padding: 0 24px 22px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .final-cta {
+      margin: 20px 0 80px;
+      border-radius: var(--radius-xl);
+      padding: 42px;
+      color: white;
+      background:
+        linear-gradient(135deg, var(--blue), #0b5fd7 45%, var(--teal)),
+        radial-gradient(circle at 12% 15%, rgba(255,255,255,.2), transparent 22%);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .final-cta::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      right: -80px;
+      bottom: -110px;
+    }
+    .final-cta h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(28px, 4.2vw, 46px);
+      line-height: 1.1;
+      letter-spacing: -.07em;
+    }
+    .final-cta p {
+      position: relative;
+      z-index: 1;
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.78);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    .final-cta .btn { position: relative; z-index: 1; background: white; color: var(--blue); }
+
+    footer {
+      background: #0b1020;
+      color: white;
+      padding: 36px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: start;
+    }
+    footer p {
+      margin: 10px 0 0;
+      color: rgba(255,255,255,.62);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .footer-links a {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 980px) {
+      .hero-grid, .timeline-wrap, .apply-panel, .venue, .final-cta, .footer-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .program-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow-line { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .booth-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .guide-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+      .apply-form { padding: 0; }
+    }
+
+    @media (max-width: 820px) {
+      .menu-btn { display: inline-flex; align-items: center; gap: 6px; }
+      .nav-links {
+        position: absolute;
+        top: 73px;
+        left: 14px;
+        right: 14px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border-radius: 22px;
+        background: rgba(255,255,255,.96);
+        border: 1px solid rgba(17,24,39,.08);
+        box-shadow: var(--shadow-soft);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { border-radius: 14px; }
+      .nav-cta { width: 100%; }
+      .brand { min-width: auto; }
+      .meta-row { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 620px) {
+      .topbar .wrap { flex-direction: column; gap: 8px; }
+      .hero { padding-top: 42px; }
+      .hero-panel, .flow, .apply-panel, .final-cta { padding: 20px; border-radius: 24px; }
+      .countdown { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid, .program-grid, .flow-line, .booth-grid, .faq-grid, .stamp-grid { grid-template-columns: 1fr; }
+      .booth-toolbar { align-items: start; flex-direction: column; }
+      .time-item { grid-template-columns: 1fr; gap: 6px; }
+      .venue-info { padding: 24px; }
+      h1 { font-size: 44px; }
+      .hero-actions .btn { width: 100%; }
+    }
+
+    @media print {
+      .topbar, .nav, .hero-actions, .final-cta, footer { display: none !important; }
+      body { background: white; }
+      section, .hero { padding: 22px 0; }
+      .hero-panel, .stat-card, .program-card, .flow, .booth-card, .time-card, .stamp-card, .apply-panel, .guide-card, .venue, .faq-card { box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar" role="banner">
+    <div class="wrap">
+      <span class="pill-mini">📌 사전신청 페이지 시안</span>
+      <span><b>2026.10.28.(수) 10:00~17:00</b> · 조선대학교 체육대학 1층 체육관</span>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="주요 메뉴">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="2026 조선대 진로취업박람회 홈">
+        <div class="brand-mark">CSU</div>
+        <div class="brand-title">
+          <strong>진로취업박람회</strong>
+          <span>CHOSUN CAREER FAIR 2026</span>
+        </div>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navLinks">☰ 메뉴</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">행사소개</a>
+        <a href="#program">프로그램</a>
+        <a href="#booths">부스안내</a>
+        <a href="#apply">참여신청</a>
+        <a href="#venue">오시는 길</a>
+        <a class="nav-cta" href="#apply">신청하기 →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy-wrap reveal">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span> 2026 CSU CAREER FAIR · ONE-DAY CAREER PLATFORM</span>
+          <h1><span class="gradient-text">2026 조선대</span><br />진로취업박람회</h1>
+          <p class="hero-subtitle">내일을 찾고, 기업과 연결되는 하루</p>
+          <p class="hero-copy">
+            기업 채용상담, 동문 현직자 멘토링, 입사지원 컨설팅, 취업 체험 이벤트를 한 자리에서 만나는 조선대학교 대표 진로·취업 플랫폼입니다. 희망 부스와 시간대를 사전 신청하고, 현장에서 맞춤형 상담과 실전 취업 정보를 받아보세요.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apply">참여신청 바로가기</a>
+            <a class="btn btn-secondary" href="#program">프로그램 살펴보기</a>
+          </div>
+          <div class="meta-row" aria-label="행사 핵심 정보">
+            <div class="meta-card">
+              <span>행사일시</span>
+              <strong>2026년 10월 28일 수요일<br />10:00~17:00</strong>
+            </div>
+            <div class="meta-card">
+              <span>행사장소</span>
+              <strong>조선대학교 체육대학<br />1층 체육관</strong>
+            </div>
+            <div class="meta-card">
+              <span>참여방식</span>
+              <strong>사전 신청 + 현장 접수<br />희망부스 예약제</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="행사 카운트다운 및 핵심 안내">
+          <div class="panel-header">
+            <span class="panel-label">⏱ D-DAY COUNTDOWN</span>
+            <span class="panel-date">2026.10.28 WED</span>
+          </div>
+          <div class="countdown" aria-live="polite">
+            <div class="count-box"><strong id="days">--</strong><span>Days</span></div>
+            <div class="count-box"><strong id="hours">--</strong><span>Hours</span></div>
+            <div class="count-box"><strong id="minutes">--</strong><span>Minutes</span></div>
+            <div class="count-box"><strong id="seconds">--</strong><span>Seconds</span></div>
+          </div>
+          <div class="journey-card">
+            <h2>Career Discovery → Job Matching → Future Launch</h2>
+            <div class="journey-steps">
+              <div class="journey-step"><span>1</span> 관심 직무·기업 탐색</div>
+              <div class="journey-step"><span>2</span> 현직자·채용담당자 상담</div>
+              <div class="journey-step"><span>3</span> 입사지원·면접 준비 연결</div>
+            </div>
+          </div>
+          <div class="mini-notice">
+            <strong>안내</strong>
+            <span>상담·멘토링·입사지원 면접은 부스별 10~15분 단위로 운영됩니다. 예약 시간 5분 전에는 대기해주세요.</span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">행사소개</span>
+            <h2 class="section-title">기업·동문·기관이 함께 만드는<br />조선대 맞춤형 취업 연결의 장</h2>
+            <p class="section-desc">
+              지역 우수기업과 조선대학교 동문 현직자, 교내외 취업지원기관을 연계하여 학생의 진로탐색부터 실전 취업준비까지 한 번에 경험할 수 있도록 설계했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-grid reveal">
+          <article class="stat-card">
+            <div class="icon">🏢</div>
+            <strong>55+</strong>
+            <span>참가기업 및 채용상담 부스 목표</span>
+          </article>
+          <article class="stat-card">
+            <div class="icon">🎪</div>
+            <strong>80</strong>
+            <span>기업·이벤트·교내외 기관 부스 내외</span>
+          </article>
+          <article class="stat-card">
+            <div class="icon">🙋</div>
+            <strong>1,600+</strong>
+            <span>재학생·졸업생 참여 목표</span>
+          </article>
+          <article class="stat-card">
+            <div class="icon">💬</div>
+            <strong>10~15</strong>
+            <span>부스별 상담·면접 운영 시간</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="flow reveal" aria-label="박람회 참여 동선">
+          <h2 class="flow-title">추천 참여 동선</h2>
+          <div class="flow-line">
+            <div class="flow-item"><span class="num">1</span><strong>입장·체크인</strong><span>사전 신청 확인, 스탬프 미션 카드 수령</span></div>
+            <div class="flow-item"><span class="num">2</span><strong>기업상담</strong><span>희망기업 상담, 채용정보 확인, 입사조건 질의</span></div>
+            <div class="flow-item"><span class="num">3</span><strong>멘토링·컨설팅</strong><span>동문 현직자 직무상담, 서류·면접 코칭</span></div>
+            <div class="flow-item"><span class="num">4</span><strong>취업체험</strong><span>퍼스널컬러, 인생네컷, 취업 이벤트 참여</span></div>
+            <div class="flow-item"><span class="num">5</span><strong>후속연계</strong><span>입사지원, 추가면접, 취업지원 프로그램 연결</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="program">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">프로그램</span>
+            <h2 class="section-title">참여 목적에 따라 고르는<br />7개 핵심 프로그램</h2>
+            <p class="section-desc">
+              기업 상담과 멘토링 중심의 실전형 프로그램에 학생 참여를 높이는 체험형 콘텐츠를 결합했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="program-grid reveal">
+          <article class="program-card">
+            <div class="program-icon">🏢</div>
+            <h3>기업 채용상담관</h3>
+            <p>주요 참여기업의 채용담당자와 직접 상담하며 직무, 채용절차, 필요역량, 입사지원 방향을 확인합니다.</p>
+            <div class="tag-row"><span class="tag">기업상담</span><span class="tag">채용정보</span><span class="tag">입사지원</span></div>
+          </article>
+          <article class="program-card">
+            <div class="program-icon">🧑‍💼</div>
+            <h3>동문 현직자 멘토링</h3>
+            <p>조선대 동문 현직자와 1:1 또는 소그룹 상담을 통해 직무 현실, 커리어 경로, 취업 준비법을 듣습니다.</p>
+            <div class="tag-row"><span class="tag">직무이해</span><span class="tag">동문멘토</span><span class="tag">커리어패스</span></div>
+          </article>
+          <article class="program-card">
+            <div class="program-icon">📝</div>
+            <h3>취업전략팀 컨설팅</h3>
+            <p>이력서·자기소개서·면접 준비 방향을 점검하고, 대학일자리플러스센터 프로그램과 후속 상담으로 연결합니다.</p>
+            <div class="tag-row"><span class="tag">서류첨삭</span><span class="tag">면접전략</span><span class="tag">후속관리</span></div>
+          </article>
+          <article class="program-card">
+            <div class="program-icon">🎤</div>
+            <h3>취업 토크콘서트</h3>
+            <p>현직자와 채용 전문가가 들려주는 산업·직무 트렌드, 취업 성공사례, Q&A 중심의 공개 세션입니다.</p>
+            <div class="tag-row"><span class="tag">특강</span><span class="tag">Q&A</span><span class="tag">동기부여</span></div>
+          </article>
+          <article class="program-card">
+            <div class="program-icon">🎨</div>
+            <h3>퍼스널컬러 체험</h3>
+            <p>면접 이미지와 첫인상 관리에 도움이 되는 컬러 진단 및 스타일링 포인트를 제공합니다.</p>
+            <div class="tag-row"><span class="tag">이미지메이킹</span><span class="tag">면접복장</span></div>
+          </article>
+          <article class="program-card">
+            <div class="program-icon">📸</div>
+            <h3>인생네컷 & 이벤트존</h3>
+            <p>스탬프 미션, 포토존, 참여 이벤트를 통해 박람회 참여 경험을 높이고 현장 체류 시간을 확대합니다.</p>
+            <div class="tag-row"><span class="tag">이벤트</span><span class="tag">포토존</span><span class="tag">스탬프</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booths">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">부스안내</span>
+            <h2 class="section-title">주요 부스 미리보기</h2>
+            <p class="section-desc">참여기업 및 프로그램은 확정 과정에서 변경될 수 있습니다. 최종 부스 배치도와 시간표는 행사 전 홈페이지에 업데이트됩니다.</p>
+          </div>
+        </div>
+
+        <div class="booth-toolbar reveal">
+          <div class="filters" role="group" aria-label="부스 필터">
+            <button class="filter-btn active" type="button" data-filter="all">전체</button>
+            <button class="filter-btn" type="button" data-filter="company">기업상담</button>
+            <button class="filter-btn" type="button" data-filter="mentor">멘토링</button>
+            <button class="filter-btn" type="button" data-filter="event">체험이벤트</button>
+            <button class="filter-btn" type="button" data-filter="support">취업지원</button>
+          </div>
+          <button class="btn btn-secondary" type="button" onclick="window.print()">안내자료 출력</button>
+        </div>
+
+        <div class="booth-grid reveal" id="boothGrid">
+          <article class="booth-card" data-category="company"><span class="booth-chip">기업상담</span><h3>파라다이스호텔</h3><p>호텔·서비스 직무 상담 및 채용정보 안내</p></article>
+          <article class="booth-card" data-category="company"><span class="booth-chip">기업상담</span><h3>삼성바이오로직스</h3><p>바이오·품질·생산·연구지원 직무 탐색</p></article>
+          <article class="booth-card" data-category="company"><span class="booth-chip">기업상담</span><h3>엠코테크놀로지코리아</h3><p>반도체 패키징·제조·공정 관련 상담</p></article>
+          <article class="booth-card" data-category="company"><span class="booth-chip">기업상담</span><h3>YG엔터</h3><p>콘텐츠·엔터테인먼트 분야 직무 이해</p></article>
+          <article class="booth-card" data-category="mentor"><span class="booth-chip">멘토링</span><h3>동문 현직자 멘토링</h3><p>직무별 커리어 준비법 및 현업 경험 공유</p></article>
+          <article class="booth-card" data-category="support"><span class="booth-chip">취업지원</span><h3>취업전략팀</h3><p>입사지원서류·면접·취업프로그램 연계 상담</p></article>
+          <article class="booth-card" data-category="support"><span class="booth-chip">취업지원</span><h3>청년정책 상담</h3><p>국민취업지원제도, 내일배움카드 등 정책 안내</p></article>
+          <article class="booth-card" data-category="event"><span class="booth-chip">체험이벤트</span><h3>퍼스널컬러</h3><p>면접 이미지 개선을 위한 컬러 진단 체험</p></article>
+          <article class="booth-card" data-category="event"><span class="booth-chip">체험이벤트</span><h3>인생네컷</h3><p>참여 인증 포토존 및 박람회 추억 만들기</p></article>
+          <article class="booth-card" data-category="support"><span class="booth-chip">취업지원</span><h3>AI 면접 체험</h3><p>면접 답변 연습과 피드백 경험 제공</p></article>
+          <article class="booth-card" data-category="event"><span class="booth-chip">체험이벤트</span><h3>스탬프 미션</h3><p>부스 참여 인증 후 경품 이벤트 응모</p></article>
+          <article class="booth-card" data-category="event"><span class="booth-chip">휴식공간</span><h3>푸드트럭존</h3><p>상담 대기 및 네트워킹을 위한 휴식 공간</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container timeline-wrap">
+        <div class="time-card reveal">
+          <span class="section-kicker">운영시간표</span>
+          <h3 style="margin-top:14px;">10:00부터 17:00까지<br />상시 상담형으로 운영</h3>
+          <div class="time-list">
+            <div class="time-item"><time>10:00</time><div><strong>박람회 오픈·입장 체크인</strong><span>안내데스크에서 사전 신청 확인 및 현장 동선 안내</span></div></div>
+            <div class="time-item"><time>10:30</time><div><strong>기업상담·멘토링 시작</strong><span>예약 시간 기준 부스별 상담, 현장 대기자 순차 안내</span></div></div>
+            <div class="time-item"><time>12:00</time><div><strong>취업 체험 이벤트 운영</strong><span>퍼스널컬러, 인생네컷, 스탬프 미션 참여</span></div></div>
+            <div class="time-item"><time>14:00</time><div><strong>취업 토크콘서트·특강</strong><span>채용 트렌드와 직무별 취업 전략 공개 세션</span></div></div>
+            <div class="time-item"><time>16:30</time><div><strong>스탬프 미션 마감·경품 안내</strong><span>참여 인증 및 후속 상담 신청 안내</span></div></div>
+          </div>
+        </div>
+
+        <div class="stamp-card reveal">
+          <span class="section-kicker">참여 이벤트</span>
+          <h3 style="margin-top:14px;">스탬프 미션으로 상담 참여율을 높입니다</h3>
+          <p>기업상담, 멘토링, 취업지원, 체험부스 등 지정 미션을 완료하면 스탬프를 받을 수 있습니다. 누적 스탬프 기준으로 현장 경품 이벤트에 참여할 수 있습니다.</p>
+          <div class="stamp-grid" aria-label="스탬프 미션 예시">
+            <div class="stamp"><div><b>기업상담</b><span>희망기업 1곳 이상</span></div></div>
+            <div class="stamp"><div><b>멘토링</b><span>동문·현직자 상담</span></div></div>
+            <div class="stamp"><div><b>취업지원</b><span>서류·면접 컨설팅</span></div></div>
+            <div class="stamp"><div><b>체험존</b><span>퍼스널컬러·포토존</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">참여신청</span>
+            <h2 class="section-title">희망 부스와 시간대를 선택하면<br />현장 상담이 더 빨라집니다</h2>
+            <p class="section-desc">Google 설문폼 기반으로 신청 정보를 수집하고, 부스별 예약·대기·상담 운영에 활용합니다.</p>
+          </div>
+        </div>
+
+        <div class="apply-panel reveal">
+          <div class="apply-visual">
+            <div>
+              <div class="qr-mock" aria-label="QR 코드 삽입 영역">
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <h3>QR 신청 영역</h3>
+              <p>실제 운영 시 구글설문 링크 또는 QR 이미지를 이 영역에 삽입하면 됩니다.</p>
+            </div>
+            <a class="btn" style="background:#fff;color:var(--blue);align-self:flex-start;" href="#">신청 링크 연결 예정</a>
+          </div>
+          <div class="apply-form">
+            <span class="section-kicker">신청폼 구성</span>
+            <div class="step-list">
+              <div class="apply-step"><div class="step-no">1</div><div><strong>참여신청 기본정보</strong><span>이름, 학과, 학번, 연락처, 학년 등 기본정보를 입력합니다.</span></div></div>
+              <div class="apply-step"><div class="step-no">2</div><div><strong>참여희망 분야 선택</strong><span>기업상담, 입사지원, 동문멘토링, 취업컨설팅, 이벤트 부스를 선택합니다.</span></div></div>
+              <div class="apply-step"><div class="step-no">3</div><div><strong>희망 부스·시간대 예약</strong><span>참여희망 부스와 상담 가능 시간대를 선택하여 현장 대기 시간을 줄입니다.</span></div></div>
+              <div class="apply-step"><div class="step-no">4</div><div><strong>간단한 자기소개 입력</strong><span>학과, 자격증, 희망직무, 관련경험, 나의 다짐 또는 한마디를 작성합니다.</span></div></div>
+              <div class="apply-step"><div class="step-no">5</div><div><strong>입사지원서류 제출 선택</strong><span>이력서·자기소개서 등 입사지원 서류는 선택 제출로 운영합니다.</span></div></div>
+            </div>
+            <div class="link-placeholder">
+              운영자 메모: 실제 홈페이지 게시 전 신청 버튼의 href 값에 Google Form URL을 넣고, QR 이미지를 교체하세요.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">현장 운영 안내</span>
+            <h2 class="section-title">예약 시간 5분 전 대기,<br />부스별 10~15분 집중 상담</h2>
+          </div>
+        </div>
+        <div class="guide-grid reveal">
+          <article class="guide-card">
+            <h3>참여자 안내</h3>
+            <p>희망 부스와 시간대를 기준으로 현장 동선을 확인해주세요.</p>
+            <ul>
+              <li>상담 예약 시간 5분 전 부스 근처 대기</li>
+              <li>운영스탭에게 대기 중임을 안내</li>
+              <li>상담 종료 후 다음 예약 또는 이벤트존 이동</li>
+            </ul>
+          </article>
+          <article class="guide-card">
+            <h3>상담·멘토링 운영</h3>
+            <p>짧고 밀도 높은 상담을 위해 질문을 미리 준비하면 좋습니다.</p>
+            <ul>
+              <li>부스별 상담·멘토링 10~15분 진행</li>
+              <li>15분 경과 시 다음 상담을 위해 종료 요청 가능</li>
+              <li>상담 내용은 후속 취업지원 프로그램과 연계</li>
+            </ul>
+          </article>
+          <article class="guide-card">
+            <h3>입사지원·후속면접</h3>
+            <p>기업별 현장 접수 기준에 따라 입사지원 또는 추가 면접이 진행됩니다.</p>
+            <ul>
+              <li>서류 제출자는 기업별 안내 기준에 따라 확인</li>
+              <li>1차면접 후 추가면접은 10일 이내 회사 공지 예정</li>
+              <li>취업전략팀 후속상담으로 지원전략 보완</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="venue">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">오시는 길</span>
+            <h2 class="section-title">조선대학교 체육대학<br />1층 체육관</h2>
+            <p class="section-desc">현장에는 안내데스크, 행사장 배치도, 부스 현황판, A보드 안내판을 배치하여 참여자가 쉽게 이동할 수 있도록 운영합니다.</p>
+          </div>
+        </div>
+        <div class="venue reveal">
+          <div class="map-mock" aria-label="지도 시안">
+            <div class="map-road r1"></div>
+            <div class="map-road r2"></div>
+            <div class="map-road r3"></div>
+            <div class="pin" aria-hidden="true"></div>
+            <div class="map-label">체육대학 1층 체육관</div>
+          </div>
+          <div class="venue-info">
+            <span class="section-kicker">VENUE INFO</span>
+            <h2 class="section-title" style="font-size:36px;margin-top:14px;">행사장 안내</h2>
+            <div class="venue-list">
+              <div class="venue-item"><div class="venue-icon">📍</div><div><strong>주소</strong><span>광주광역시 동구 조선대길 146</span></div></div>
+              <div class="venue-item"><div class="venue-icon">🧭</div><div><strong>주요 동선</strong><span>안내데스크 → 기업상담관 → 멘토링관 → 체험존 → 후속상담</span></div></div>
+              <div class="venue-item"><div class="venue-icon">🪧</div><div><strong>현장 안내물</strong><span>행사장 배치도, 부스 현황판, 프로그램 시간표, 안내 A보드</span></div></div>
+              <div class="venue-item"><div class="venue-icon">☎️</div><div><strong>문의</strong><span>조선대학교 취업지원부서 / 운영사무국 연락처 삽입 예정</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker">FAQ</span>
+            <h2 class="section-title">자주 묻는 질문</h2>
+          </div>
+        </div>
+        <div class="faq-grid reveal">
+          <details class="faq-card" open>
+            <summary>사전신청을 꼭 해야 하나요?</summary>
+            <p>원활한 상담 운영을 위해 사전신청을 권장합니다. 현장 접수도 가능하나, 희망 부스와 시간대는 사전신청자에게 우선 배정될 수 있습니다.</p>
+          </details>
+          <details class="faq-card">
+            <summary>여러 부스를 신청할 수 있나요?</summary>
+            <p>가능합니다. 단, 같은 시간대 중복 예약을 피하고 상담 시간 5분 전에는 해당 부스 주변에서 대기해주세요.</p>
+          </details>
+          <details class="faq-card">
+            <summary>입사지원서류는 필수 제출인가요?</summary>
+            <p>선택 제출입니다. 실제 채용상담이나 입사지원을 희망하는 경우 이력서와 자기소개서를 준비하면 상담의 실효성이 높아집니다.</p>
+          </details>
+          <details class="faq-card">
+            <summary>상담 시간은 얼마나 걸리나요?</summary>
+            <p>기업상담, 멘토링, 입사지원 면접은 부스별 10~15분 기준으로 운영됩니다. 대기 인원에 따라 현장에서 조정될 수 있습니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="final-cta reveal">
+        <div>
+          <h2>10월 28일, 조선대에서<br />나의 다음 커리어를 만나보세요.</h2>
+          <p>사전신청으로 희망 부스와 시간을 먼저 선택하고, 현장에서 기업·동문·취업전문가와 연결되는 경험을 시작하세요.</p>
+        </div>
+        <a class="btn" href="#apply">참여신청하기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="color:white;">
+          <div class="brand-mark">CSU</div>
+          <div class="brand-title">
+            <strong>2026 조선대 진로취업박람회</strong>
+            <span style="color:rgba(255,255,255,.62);">CHOSUN CAREER FAIR 2026</span>
+          </div>
+        </div>
+        <p>본 페이지는 제안·홍보용 홈페이지 시안입니다. 실제 운영 시 신청 링크, 최종 참여기업, 부스 배치도, 문의처, 개인정보 수집·이용 동의 문구를 확정 후 게시해야 합니다.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">행사소개</a>
+        <a href="#program">프로그램</a>
+        <a href="#booths">부스안내</a>
+        <a href="#apply">신청안내</a>
+        <a href="#venue">오시는 길</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const target = new Date('2026-10-28T10:00:00+09:00').getTime();
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = String(value).padStart(2, '0');
+    };
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = Math.max(0, target - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      setText('days', days);
+      setText('hours', hours);
+      setText('minutes', minutes);
+      setText('seconds', seconds);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.booth-card');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? 'grid' : 'none';
+        });
+      });
+    });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
